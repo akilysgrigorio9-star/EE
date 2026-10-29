@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sand: #e8d8c3;
+  --color-beige: #d2b99a;
+  --color-cream: #faf8f3;
+  --color-wood: #76513a;
+  --color-moss: #526b50;
+  --color-forest: #263d32;
+
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --shadow-natural: 0 24px 50px -22px rgb(38 61 50 / 0.45), 0 8px 18px -10px rgb(118 81 58 / 0.35);
+  --shadow-soft: 0 12px 30px -16px rgb(38 61 50 / 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-forest);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-beige);
+  color: var(--color-forest);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-beige);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Textura sutil de pedra para fundos */
+.stone-texture {
+  background-image:
+    radial-gradient(rgb(118 81 58 / 0.07) 1px, transparent 1.2px),
+    radial-gradient(rgb(38 61 50 / 0.05) 1px, transparent 1.2px);
+  background-size: 22px 22px, 37px 37px;
+  background-position: 0 0, 11px 17px;
+}
+
+/* Veio de madeira para divisores */
+.wood-grain {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(118 81 58) 0 6px,
+    rgb(103 70 49) 6px 9px,
+    rgb(130 92 67) 9px 15px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
